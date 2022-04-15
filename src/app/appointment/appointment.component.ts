@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup,Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-appointment',
@@ -7,9 +8,22 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AppointmentComponent implements OnInit {
 
-  constructor() { }
+  public appointmentForm!:FormGroup;
+  constructor(private formBuilder:FormBuilder) { }
 
   ngOnInit(): void {
+    this.appointmentForm=this.formBuilder.group({
+      firstname :['',Validators.required],
+      lastname :['',Validators.required],
+      email:['',[Validators.required,Validators.email]],
+      date:['',Validators.required],
+      time:['',Validators.required],
+      mobile:['',[Validators.required,Validators.pattern("^[0-9]{10}")]]
+  })
+
+  }
+  get f(){
+    return this.appointmentForm.controls;
   }
 
 }
