@@ -6,6 +6,11 @@
           Appointment form
         </h3>
       </div>
+
+
+
+
+
       <form [formGroup]="appointmentForm">
         <!-- <div class="row g-3">  -->
           <!-- firstname  -->
@@ -112,12 +117,12 @@
           </div>
 
           <div class="col-12 mt-5">
-            <button type="submit" class="btn btn-primary float-end">
+            <button type="submit" class="first btn-primary " onclick="alert('Successfully Booked!')">
               Book Appointment
             </button>
             <button
               type="button"
-              class="btn btn-outline-secondary float-end me-2"
+              class="btn btn-outline-secondary float-end me-2" onclick="alert('Appointment Cancelled')"
             >
               Cancel
             </button>

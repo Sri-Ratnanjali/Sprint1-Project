@@ -32,8 +32,8 @@
             <td>{{d.specialization }}</td>
             <td>{{d.mobileNo}}</td>
             <td>{{d.experience}}</td>
-            <td>{{d.availability}}</td>
-            <td><button routerLink="/appointment" routerLinkActive="active" type="button" class="btn btn-outline-primary btn-sm m-0 waves-effect">Book an Appointment</button></td>
+            <td>{{d.availability }}</td>
+            <td><button routerLink="/appointment"  routerLinkActive="active" [disabled]="d.availability=='No'" type="button" class="btn btn-outline-primary btn-sm m-0 waves-effect">Book an Appointment</button></td>
           </tr>
         </tbody>
       </table>

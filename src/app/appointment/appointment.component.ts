@@ -8,6 +8,7 @@ import { FormBuilder, FormGroup,Validators } from '@angular/forms';
 })
 export class AppointmentComponent implements OnInit {
 
+
   public appointmentForm!:FormGroup;
   constructor(private formBuilder:FormBuilder) { }
 
