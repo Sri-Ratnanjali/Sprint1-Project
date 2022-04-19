@@ -1,0 +1,60 @@
+<!-- <p>add-doctor works!</p> -->
+<h2>Add New Doctor</h2>
+<hr>
+<div class="row">
+  <div class="col-md-5">
+
+    <form autocomplete="off" #doctorForm="ngForm" (ngSubmit)="onSubmit(doctorForm)">
+      <!--Movie Name-->
+      <div class="mb-2">
+        <label>First Name</label>
+        <input type="text" name="firstName" class="form-control" [(ngModel)]="bookappointmentService.doctorData.firstName"
+        placeholder="Enter First Name"
+          #firstName="ngModel" required [class.is-invalid]="firstName.invalid && firstName.touched">
+      </div>
+
+      <!--Genre Name-->
+      <div class="mb-2">
+        <label>Last Name</label>
+        <input type="text" name="lastName" class="form-control" [(ngModel)]="bookappointmentService.doctorData.lastName"
+          #lastName="ngModel" required [class.is-invalid]="lastName.invalid && lastName.touched">
+      </div>
+
+      <!--Synopsis-->
+      <div class="mb-2">
+        <label>Specialization</label>
+        <input type="text" name="specialization" class="form-control" [(ngModel)]="bookappointmentService.doctorData.specialization"
+          #specialization="ngModel" required [class.is-invalid]="specialization.invalid && specialization.touched">
+      </div>
+
+      <!--Runtime-->
+
+
+      <!--Rating-->
+      <div class="mb-2">
+        <label>Mobile No</label>
+        <input type="text" name="mobileNo" class="form-control" [(ngModel)]="bookappointmentService.doctorData.mobileNo"
+          #mobileno="ngModel" required [class.is-invalid]="mobileno.invalid && mobileno.touched">
+      </div>
+
+      <!--Release Date-->
+      <div class="mb-2">
+        <label>Experience</label>
+        <input type="text" name="experience" class="form-control" [(ngModel)]="bookappointmentService.doctorData.experience"
+          #experience="ngModel" required [class.is-invalid]="experience.invalid && experience.touched">
+      </div>
+      <div class="mb-2">
+        <label>Availability</label>
+        <input type="text" name="availability" class="form-control" [(ngModel)]="bookappointmentService.doctorData.availability"
+          #availability="ngModel" required [class.is-invalid]="availability.invalid && availability.touched">
+      </div>
+
+
+      <div class="mb-2">
+        <button  type="submit" class="btn btn-dark">Submit</button>
+        <button type="reset" class="btn btn-danger mx-2">Reset</button>
+      </div>
+
+    </form>
+  </div>
+</div>

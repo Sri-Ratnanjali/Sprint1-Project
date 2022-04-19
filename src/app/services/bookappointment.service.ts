@@ -1,11 +1,12 @@
 import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { DoctorDetails } from '../models/doctor.model';
 
 @Injectable({
   providedIn: 'root'
 })
 export class BookappointmentService {
-
+doctorData: DoctorDetails= new DoctorDetails();
   constructor(private http: HttpClient) { }
 
   doctorDetails=[{
@@ -37,6 +38,7 @@ export class BookappointmentService {
       doctorImg:"https://thumbs.dreamstime.com/b/doctor-indian-38175791.jpg"
      }
     ]
+    //baseURL: string="https://localhost:44333/api/DoctorDetails/";
 
 
   getDoctorDetails(){
@@ -47,7 +49,8 @@ export class BookappointmentService {
     const param=new HttpParams()
     .set('name','pen')
     .set('pageNo',5);
-    return this.http.get("https://localhost:44354/api/DoctorDetails/GetAll",{headers:headers});
+    return this.http.get("https://localhost:44333/api/DoctorDetails/GetAll",{headers:headers});
+    //return this.http.get<DoctorDetails>(this.baseURL + "GetDoctors");
   }
   getDoctorBySpecialization(specialization:string){
 
@@ -56,8 +59,17 @@ export class BookappointmentService {
       .set('control-type','application/json')
       .set('access-control-allow-origin','*');
 
-      return this.http.get(`https://localhost:44354/api/DoctorDetails/GetBySpecialization/${specialization}`,{headers:headers});
+      return this.http.get(`https://localhost:44333/api/DoctorDetails/GetBySpecialization/${specialization}`,{headers:headers});
+     //return this.http.get<DoctorDetails>(this.baseURL + `GetBySpecialization/${specialization}`);
 
+     }
+     createDoctor(){
+      //const headers=new HttpHeaders()
+      //.set('control-type','application/json')
+      //.set('access-control-allow-origin','*');
+
+
+       return this.http.post("https://localhost:44333/api/DoctorDetails/Create",this.doctorData);
      }
     }
 

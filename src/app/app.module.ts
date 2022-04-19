@@ -13,6 +13,8 @@ import {HttpClientModule} from '@angular/common/http';
 import { GetDoctorComponent } from './doctors/get-doctor/get-doctor.component';
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
 import { AppointmentComponent } from './appointment/appointment.component';
+import { AdminComponent } from './admin/admin.component';
+import { AddDoctorComponent } from './add-doctor/add-doctor.component';
 
 
 @NgModule({
@@ -25,6 +27,8 @@ import { AppointmentComponent } from './appointment/appointment.component';
     SignupComponent,
     GetDoctorComponent,
     AppointmentComponent,
+    AdminComponent,
+    AddDoctorComponent,
 
   ],
   imports: [

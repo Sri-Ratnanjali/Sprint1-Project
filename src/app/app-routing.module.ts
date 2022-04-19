@@ -1,5 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { AddDoctorComponent } from './add-doctor/add-doctor.component';
+import { AdminComponent } from './admin/admin.component';
 import { AppointmentComponent } from './appointment/appointment.component';
 import { GetDoctorComponent } from './doctors/get-doctor/get-doctor.component';
 import { HomeComponent } from './pages/home/home.component';
@@ -22,6 +24,12 @@ const routes: Routes = [
   },
   {
     path:'appointment',component:AppointmentComponent
+  },
+  {
+    path:'admin',component:AdminComponent
+  },
+  {
+    path:'add-doctor',component:AddDoctorComponent
   }
 
 ];

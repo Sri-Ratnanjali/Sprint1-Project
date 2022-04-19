@@ -117,10 +117,10 @@
           </div>
 
           <div class="col-12 mt-5">
-            <button type="submit" class="first btn-primary " onclick="alert('Successfully Booked!')">
+            <button routerLink="/" routerLinkActive="active" type="submit" [disabled]="!appointmentForm.valid" class="btn btn-primary " onclick="alert('Successfully Booked!')">
               Book Appointment
             </button>
-            <button
+            <button routerLink="/search" routerLinkActive="active"
               type="button"
               class="btn btn-outline-secondary float-end me-2" onclick="alert('Appointment Cancelled')"
             >
